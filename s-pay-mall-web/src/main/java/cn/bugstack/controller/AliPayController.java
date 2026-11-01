@@ -69,6 +69,7 @@ public class AliPayController {
      */
     @RequestMapping(value = "alipay_notify_url", method = RequestMethod.POST)
     public String payNotify(HttpServletRequest request) throws AlipayApiException {
+    
         log.info("支付回调，消息接收 {}", request.getParameter("trade_status"));
 
         if (!request.getParameter("trade_status").equals("TRADE_SUCCESS")) {
